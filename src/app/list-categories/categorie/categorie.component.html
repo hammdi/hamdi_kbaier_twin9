@@ -1,0 +1,17 @@
+
+   <!-- <div class="col-md-4" style="margin-bottom: 20px;">
+      <img [src]="products.image" alt="Grand électroménager" class="img-fluid h-50 w-75">
+      <h3>{{ products.nom + ' ' + getID() }}</h3>
+      <p>{{ products.stock > 0 ? 'Only ' + products.stock + ' left' : 'not in stock' }}</p>
+      <button [disabled]="!(products.stock > 0)" class="btn btn-primary">Voir produits</button>
+      <input bind-value="name" (input)="onNameChange($event)">
+      <button (click)="decrementCardValue()">-</button>
+      <span>{{ addToCart }}</span>
+      <button (click)="incrementCardValue()">+</button>
+      <br>
+      <p>name={{ name }} </p>
+    </div>-->
+      <img [src]="pc.image" (click)="alert(pc.description)" alt="Produit" class="img-fluid h-50 w-75">
+   <h3>{{pc.title | uppercase}}</h3>
+      <button *ngIf="pc.available" class="btn btn-primary">Voir produits</button>
+

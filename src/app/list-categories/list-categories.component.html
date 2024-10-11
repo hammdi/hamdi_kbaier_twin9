@@ -1,50 +1,9 @@
+<br/><app-search style=""></app-search>
+<app-filter (selectedfilterRadioButtonChanged)="onFilterChanged($event)" [all]="totalProduct" [inStock]="totalStock" [outOfStock]="totalOutStock" style="margin-left: 50px;" ></app-filter><br/>
 <div class="container">
-  <div class="row">
-    <div class="col-md-4" style="margin-bottom: 20px;">
-      <img [src]="products.image" alt="Grand électroménager" class="img-fluid h-50 w-75">
-      <h3>{{ products.nom + ' ' + getID() }}</h3>
-      <p>{{ products.stock > 0 ? 'Only ' + products.stock + ' left' : 'not in stock' }}</p>
-      <button [disabled]="!(products.stock > 0)" class="btn btn-primary">Voir produits</button>
-      <input bind-value="name" (input)="onNameChange($event)">
-      <button (click)="decrementCardValue()">-</button>
-      <span>{{ addToCart }}</span>
-      <button (click)="incrementCardValue()">+</button>
-      <br>
-      <p>name={{ name }} </p>
-    </div>
-
-
-    <div class="col-md-4" style="margin-bottom: 20px;">
-      <img ngSrc="assets/images/categorie_petit_electromenager.jpg" alt="Petit électroménager"
-           class="img-fluid h-50 w-75"
-           height="667" width="1000">
-      <h3>Petit électroménager</h3>
-      <button class="btn btn-primary">Voir produits</button>
-    </div>
-    <div class="col-md-4" style="margin-bottom: 20px;">
-      <img ngSrc="assets/images/categorie_produits_informatiques.jpg" alt="Produits informatiques"
-           class="img-fluid h-50 w-75"
-           height="650" width="1500">
-      <h3>Produits informatiques</h3>
-      <button class="btn btn-primary">Voir produits</button>
-    </div>
-    <div class="col-md-4" style="margin-bottom: 20px;">
-      <img ngSrc="assets/images/categorie_smartPhone.jpg" alt="Smart Phones" class="img-fluid h-50 w-75" height="355"
-           width="474">
-      <h3>Smart Phones</h3>
-      <button class="btn btn-primary">Voir produits</button>
-    </div>
-    <div class="col-md-4" style="margin-bottom: 20px;">
-      <img ngSrc="assets/images/categorie_tv_image_son.jpg" alt="TV, images et son" class="img-fluid h-50 w-75"
-           height="355" width="474">
-      <h3>TV, images et son</h3>
-      <button class="btn btn-primary">Voir produits</button>
-    </div>
-    <div class="col-md-4" style="margin-bottom: 20px;">
-      <img ngSrc="assets/images/produits_nettoyages.jpg" alt="Produits voitures" class="img-fluid h-50 w-75"
-           height="234" width="306">
-      <h3>Produits voiture</h3>
-      <button class="btn btn-primary">Voir produits</button>
+  <div class="row" >
+    <div *ngFor="let p of listPro " class="col-md-4" style="margin-bottom: 20px;">
+<app-categorie  [pc]="p" *ngIf="selectedfilter==='All' || p.available.toString()===selectedfilter "></app-categorie>
     </div>
   </div>
 </div>
