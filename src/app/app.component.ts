@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mon-premier-projet';
+  searchText = '';
+  setSearchText(value: string){this.searchText = value}
 }

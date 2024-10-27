@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
 import {NgOptimizedImage} from "@angular/common";
-import { SearchComponent } from './list-categories/search/search.component';
+import { SearchComponent } from './search/search.component';
 import {FormsModule} from "@angular/forms";
 import { CategorieComponent } from './list-categories/categorie/categorie.component';
 import { FilterComponent } from './list-categories/filter/filter.component';

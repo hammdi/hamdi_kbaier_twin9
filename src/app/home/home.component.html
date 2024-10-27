@@ -1,1 +1,2 @@
-<app-list-categories></app-list-categories>
+<br/><app-search (SearchTextChanged)="setSearchText($event)"></app-search>
+<app-list-categories [searchText]="searchText"></app-list-categories>

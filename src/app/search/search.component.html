@@ -1,0 +1,11 @@
+<div class="input-group" style="justify-content: center;">
+  <div class="d-flex" role="search">
+    <input class="form-control me-2"  id="find" type="text" placeholder="Titre catégorie"
+           [(ngModel)]="searchtext" (input) = onSearchTextChanged()>
+    <!--button class="btn btn-outline-success" type="submit"  (click)="onSearchTextChanged()">Search</button-->
+    <button class="btn btn-outline-success" type="submit"  >Search</button>
+
+  </div>
+  <p > Serach result for :{{searchtext}}</p>
+
+</div>

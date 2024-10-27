@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-list-categories',
@@ -7,6 +7,9 @@ import {Component} from '@angular/core';
 })
 export class ListCategoriesComponent {
   name = 'jhon weekend';
+@Input()
+searchText:string ='';
+
   addToCart = 0;
 
   getID() {

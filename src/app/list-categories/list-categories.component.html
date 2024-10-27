@@ -1,9 +1,11 @@
-<br/><app-search style=""></app-search>
 <app-filter (selectedfilterRadioButtonChanged)="onFilterChanged($event)" [all]="totalProduct" [inStock]="totalStock" [outOfStock]="totalOutStock" style="margin-left: 50px;" ></app-filter><br/>
 <div class="container">
   <div class="row" >
     <div *ngFor="let p of listPro " class="col-md-4" style="margin-bottom: 20px;">
-<app-categorie  [pc]="p" *ngIf="selectedfilter==='All' || p.available.toString()===selectedfilter "></app-categorie>
+      <app-categorie [pc]="p"
+                     *ngIf="(selectedfilter === 'All' || p.available.toString() === selectedfilter) && (searchText === '' || p.title.toLowerCase().includes(searchText))">
+      </app-categorie>
+
     </div>
   </div>
 </div>
